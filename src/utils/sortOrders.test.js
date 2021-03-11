@@ -21,6 +21,34 @@ describe('sortByItemCount function', () => {
 		expect(result).toBe(0);
 	});
 
+	it('first order bigger than second', () => {
+		const order1 = {
+			items: ['item1', 'item2', 'item3'],
+		};
+
+		const order2 = {
+			items: ['1', '2'],
+		};
+
+		const result = sortByItemCount(order1, order2);
+
+		expect(result).toBe(1);
+	})
+
+	it('first order smaller than second', () => {
+		const order1 = {
+			items: ['item1', 'item2'],
+		};
+
+		const order2 = {
+			items: ['1', '2', '3'],
+		};
+
+		const result = sortByItemCount(order1, order2);
+
+		expect(result).toBe(-1);
+	})
+
 	it('not an object', () => {
 		const result = sortByItemCount(10, 20);
 
