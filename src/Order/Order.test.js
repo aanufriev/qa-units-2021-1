@@ -31,7 +31,7 @@ describe('Order.js', () => {
 
     expect(getDate).toHaveBeenCalledTimes(1);
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.getElement()).toBeNull();
   });
 
   it('test empty items', () => {
@@ -48,7 +48,7 @@ describe('Order.js', () => {
 
     const wrapper = shallow(<Order order={order}/>);
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.getElement()).toBeNull();
   });
 
   it('test empty date', () => {
@@ -56,7 +56,7 @@ describe('Order.js', () => {
     delete order.date;
     const wrapper = shallow(<Order order={order}/>);
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.getElement()).toBeNull();
   });
 });
 

@@ -1,7 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Order.js test empty date 1`] = `""`;
-
 exports[`Order.js test empty items 1`] = `
 <div
   className="Order"
@@ -25,10 +23,6 @@ exports[`Order.js test empty items 1`] = `
   />
 </div>
 `;
-
-exports[`Order.js test empty shop 1`] = `""`;
-
-exports[`Order.js test null order 1`] = `""`;
 
 exports[`Order.js test ok 1`] = `
 <div
