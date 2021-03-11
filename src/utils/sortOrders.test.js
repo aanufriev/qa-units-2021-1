@@ -42,7 +42,6 @@ describe('sortByItemCount function', () => {
 	});
 
 	it.each([
-		[null, null, 0],
 		[null, 	{date: 1544356800000}, 0],
 		[{date: 1544356800000}, null, 0],
 		[1544356800000, 1544356800000, 0],

@@ -35,7 +35,7 @@ describe('Order.js', () => {
   });
 
   it('test empty items', () => {
-    let order = fakeOrders[0];
+    let order = Object.assign({}, fakeOrders[0]);
     delete order.items;  
     const wrapper = shallow(<Order order={order}/>);
 
@@ -43,7 +43,7 @@ describe('Order.js', () => {
   });
 
   it('test empty shop', () => {
-    let order = fakeOrders[0];
+    let order = Object.assign({}, fakeOrders[0]);
     delete order.shop;
 
     const wrapper = shallow(<Order order={order}/>);
@@ -52,7 +52,7 @@ describe('Order.js', () => {
   });
 
   it('test empty date', () => {
-    let order = fakeOrders[0];
+    let order = Object.assign({}, fakeOrders[0]);
     delete order.date;
     const wrapper = shallow(<Order order={order}/>);
 
