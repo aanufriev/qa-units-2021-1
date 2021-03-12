@@ -12,24 +12,26 @@ configure({adapter: new Adapter() });
 describe('Order.js', () => {
   beforeEach(() => {
     getDate.mockReturnValue("1 января 2000");
-  })
+  });
 
-  afterEach(() => {
+  afterAll(() => {
     jest.resetModules();
-  })
+  });
 
   it('test ok', () => {
     const wrapper = shallow(<Order order={fakeOrders[0]}/>);
 
-    expect(getDate).toHaveBeenCalledTimes(1);
-
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('mock was called', () => {
+    const wrapper = shallow(<Order/>);
+
+    expect(getDate).toHaveBeenCalledTimes(1);
   });
 
   it('test null order', () => {
     const wrapper = shallow(<Order order={null}/>);
-
-    expect(getDate).toHaveBeenCalledTimes(1);
 
     expect(wrapper.getElement()).toBeNull();
   });
@@ -45,7 +47,6 @@ describe('Order.js', () => {
   it('test empty shop', () => {
     let order = Object.assign({}, fakeOrders[0]);
     delete order.shop;
-
     const wrapper = shallow(<Order order={order}/>);
 
     expect(wrapper.getElement()).toBeNull();
